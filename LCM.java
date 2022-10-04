@@ -1,25 +1,30 @@
 package com.test;
 
+import javax.swing.event.SwingPropertyChangeSupport;
+
 public class LCM {
 
-    public static int getLCM(int number1, int number2){
+    public static int getLCM(int number1, int number2) {
 
         int remainder;
-        int n1=number1;
-        int n2=number2;
-        int lcm,gcd;
+        int n1 = number1;
+        int n2 = number2;
+        int lcm, gcd;
 
-        while(n2!=0){
-            remainder=n1%n2;
-            n1=n2;
-            n2=remainder;
+        while (n2 != 0) {
+            remainder = n1 % n2;
+            n1 = n2;
+            n2 = remainder;
         }
-       gcd=n1;
-       lcm=(number1*number2)/gcd;
-       return lcm;
+        gcd = n1;
+        lcm = (number1 * number2) / gcd;
+        return lcm;
     }
 
     public static void main(String[] args) {
-        System.out.println(getLCM(60,24));
+        System.out.println(getLCM(60, 24));
+        System.out.println(getLCM(120, 60));
+
     }
+
 }
